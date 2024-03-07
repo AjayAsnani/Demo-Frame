@@ -4,36 +4,26 @@ import { NEXT_PUBLIC_URL } from './config';
 
 const frameMetadata = getFrameMetadata({
   buttons: [
-    {
-      label: 'Story time!',
-    },
-    {
-      action: 'link',
-      label: 'Link to Google',
-      target: 'https://www.google.com',
-    },
-    {
-      label: 'Redirect to pictures',
-      action: 'post_redirect',
-    },
+    { label: 'Get current ETH price' },
+    { label: 'USD / ETH', action: 'post' },
+    { label: 'ETH / USD', action: 'post' },
   ],
   image: {
-    src: `${NEXT_PUBLIC_URL}/park-3.png`,
+    src: `${NEXT_PUBLIC_URL}/eth.png`,
     aspectRatio: '1:1',
   },
-  input: {
-    text: 'Tell me a boat story',
-  },
+
   postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(NEXT_PUBLIC_URL),
   title: 'zizzamia.xyz',
   description: 'LFG',
   openGraph: {
     title: 'zizzamia.xyz',
     description: 'LFG',
-    images: [`${NEXT_PUBLIC_URL}/park-1.png`],
+    images: [`${NEXT_PUBLIC_URL}/eth.png`],
   },
   other: {
     ...frameMetadata,
@@ -43,7 +33,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <h1>zizzamia.xyz</h1>
+      <h1>Hello</h1>
     </>
   );
 }
